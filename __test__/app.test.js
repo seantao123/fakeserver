@@ -9,7 +9,8 @@ describe("Test the APIs", () => {
   it("test search API", async () => {
     const response = await supertest(app).get(
       "/api/location/search/?query=shanghai"
-    ); 
+    );
     expect(response.status).toBe(200);
+    expect(response.body[0].title).toBe("San Jose");
   });
 });
